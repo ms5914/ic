@@ -81,6 +81,10 @@ def searchIndex(self, pattern: str, str_in: str) -> int:
 # def compute_lps(pattern):
 #     """
 #     Computes the Longest Prefix Suffix (LPS) array for the KMP algorithm.
+      current max prefix length so far is length 
+      i keep on moving forward until pattern[length] == pattern[i] we are just incrementing the previous length and storing in lps[i]
+      if they are not equal we need to find a position in past from where we can start the comparison again and that's lps[length-1]
+      however if length is 0, we can't move any further back and we need to increment i since it's not possible to start the pattern from index i
 #     """
 #     m = len(pattern)
 #     lps = [0] * m
